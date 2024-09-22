@@ -1,0 +1,13 @@
+services:
+  django-backend:
+    build: ./DjangoMyntraAdmin/
+    ports:
+      - 8000:8000
+
+  react-frontend:
+    build: ./3-myntra-react-clone
+    ports:
+      - 3000:3000
+
+    depends_on:
+      - django-backend
