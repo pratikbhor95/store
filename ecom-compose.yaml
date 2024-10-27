@@ -1,13 +1,53 @@
 services:
+  
+
+  
+  postgres_db:
+    image: postgres:13.4-alpine
+    expose:
+      - "5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=ecom
+      - POSTGRES_USER=ecomuser  
+      - POSTGRES_PASSWORD=store123
+    
+    networks:
+      - djangonetwork
+
   django-backend:
-    build: ./DjangoMyntraAdmin/
+    build: ./storeBackend/
+    restart: always
+    volumes:
+      - /app/
     ports:
       - 8000:8000
+    env_file:
+      - .env
+    depends_on:
+      - postgres_db
+    networks:
+      - djangonetwork
+
+
+  
+
+
 
   react-frontend:
-    build: ./3-myntra-react-clone
+    build: ./storeFrontend
     ports:
       - 3000:3000
 
     depends_on:
       - django-backend
+    networks:
+      - djangonetwork
+
+volumes:
+  postgres_data:
+
+networks:
+      djangonetwork:
+          driver: bridge
