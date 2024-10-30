@@ -38,7 +38,7 @@ const FetchItems = () => {
     dispatch(fetchStatusSliceActions.markFetchingStarted());
 
     const fetchData = async () => {
-      const result = await axios.get("http://127.0.0.1:8000/api/items");
+      const result = await axios.get("https://web.bhors.com/api/items/");
       dispatch(fetchStatusSliceActions.markFetchDone());
       dispatch(fetchStatusSliceActions.markFetchingFinished());
 

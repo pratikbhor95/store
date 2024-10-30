@@ -43,8 +43,8 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
     },
     image: {
-      width: 1080/16,
-      height: 1920/16,
+      width: 90,
+      height: 150,
       resizeMode: 'contain',
     borderRadius: 8,
       marginRight: 12,
