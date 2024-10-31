@@ -25,6 +25,10 @@ class ItemsSerializer(serializers.HyperlinkedModelSerializer):
             'image',
         ]
 
+
+# class ItemsSerializer(serializers.ModelSerializer)
+
+
 # class ImageSerializer(serializers.HyperlinkedModelSerializer):
 #     class Meta:
 #         model = Image
