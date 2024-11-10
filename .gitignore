@@ -15,6 +15,7 @@ storeBackend/staticfiles/
 storeBackend/media/
 storeBackend/*.py[cod]
 storeBackend/*.sqlite3
+storeBackend/ecom
 *.pyc
 *.pyo
 *.pyd
